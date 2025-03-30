@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEOCITY Tech Conference 2025</title>
+    <!-- <link rel="stylesheet" href="static/styles.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="static/images/nctlogo.png" alt="NCT Logo">
+        </div>
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#venue">Venue</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#registration" class="register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>NEOCITY Tech Conference 2025</h1>
+        <div class="hero-content">
+            <p class="tagline">Exploring the Future: AI, Blockchain, and the Metaverse</p>
+            <p class="event-details"> April 20-22, 2025 | Seoul, South Korea</p>
+        </div>
+
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="static/images/office.jpg" alt="Slide 1">
+                    <img src="static/images/office1.jpg" alt="Slide 2">
+                    <img src="static/images/office2.jpg" alt="Slide 3">
+                    <img src="static/images/office3.jpg" alt="Slide 4">
+                </div>
+                <button class="carousel-btn prev">❮</button>
+                <button class="carousel-btn next">❯</button>
+            </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <h2>About the Conference</h2>
+            <p>Step into the NEOCITY Tech Conference 2025, a groundbreaking event where cutting-edge technology meets the limitless creativity of the digital era. Inspired by the futuristic vision of NCT, this conference brings together industry leaders, developers, and tech enthusiasts to explore the most innovative advancements in AI, blockchain, and immersive digital experiences. Whether you’re a seasoned expert or a curious newcomer, this event is designed to ignite discussions, foster collaboration, and push the boundaries of technological possibilities.</p>
+            <p>At NEOCITY Tech Conference, you’ll have the opportunity to connect with visionaries and pioneers who are shaping the future of AI-driven applications, Web3 ecosystems, and the evolving metaverse. Attendees can look forward to thought-provoking keynote sessions, hands-on workshops, and interactive showcases that demonstrate how emerging technologies are transforming industries. With an emphasis on AI-powered networking, real-time metaverse experiences, and decentralized innovations, this conference is a gateway to the digital future.</p>
+        </div>
+    </section>
+
+    <!-- SPEAKERS SECTION -->
+    <section id="speakers">
+        <div class="container">
+            <h2>Keynote Speakers</h2>
+            <div class="speakers-grid">
+                <div class="speaker-profile">
+                    <img src="static/images/mark.png" alt="Mark Lee">
+                    <h3>Mark Lee</h3>
+                    <p>CEO of NEO AI Labs</p>
+                </div>
+                <div class="speaker-profile">
+                    <img src="static/images/sakuya.png" alt="Fujinaga Sakuya">
+                    <h3>Fujinaga Sakuya</h3>
+                    <p>Lead Developer at NCTverse</p>
+                </div>
+                <div class="speaker-profile">
+                    <img src="static/images/xiaojun.png" alt="Xiao Dejun">
+                    <h3>Xiao Dejun</h3>
+                    <p>XR Experience Designer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VENUE SECTION -->
+    <section id="venue">
+        <div class="container">
+            <h2>Venue</h2>
+            <p>📍 **NEO Tech Hub, Seoul, South Korea**</p>
+            <p>A futuristic smart city venue powered by **AI, blockchain, and 5G technology.**</p>
+        </div>
+    </section>
+
+    <!-- SCHEDULE SECTION -->
+    <section id="schedule">
+        <div class="container">
+            <h2>Schedule</h2>
+            <ul>
+                <li>🕙 **10:00 AM** – Opening Keynote: NEO Horizons</li>
+                <li>🕛 **12:00 PM** – Panel Discussion: Future of Web3 & Metaverse</li>
+                <li>🕒 **3:00 PM** – AI-Generated Music & Virtual Performance</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- REGISTRATION SECTION -->
+    <section id="registration">
+        <div class="container">
+            <h2>Register Now</h2>
+            <button class="register-btn">Register Now</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 NEOCITY Tech Conference. All rights reserved.</p>
+    </footer>
+
+</body>
+
+<script>
+    let index = 0;
+    const slides = document.querySelectorAll(".carousel img");
+    const totalSlides = slides.length;
+    const slideWidth = slides[0].clientWidth + 30;
+
+function showSlide(n) {
+    if (n >= totalSlides) {
+        index = 0;
+    } else if (n < 0) {
+        index = totalSlides - 1; // Go to last slide if going backward
+    } else {
+        index = n;
+    }
+
+    document.querySelector(".carousel").style.transform = `translateX(${-index * slideWidth}px)`;
+}
+
+// Event listeners for navigation buttons
+document.querySelector(".next").addEventListener("click", function() {
+    showSlide(index + 1);
+});
+
+document.querySelector(".prev").addEventListener("click", function() {
+    showSlide(index - 1);
+});
+
+// Automatic Slide
+setInterval(() => {
+    showSlide(index + 1);
+}, 3000); // Change slide every 3 seconds
+
+
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+    }
+</script>
+
+
+</html>
