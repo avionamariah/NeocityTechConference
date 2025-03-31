@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEOCITY Tech Conference 2025</title>
-    <!-- <link rel="stylesheet" href="static/styles.css"> -->
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="static/images/icon.png" type="image/png">
 </head>
 <body>
 
@@ -32,12 +32,11 @@
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <h1>NEOCITY Tech Conference 2025</h1>
+        <h1>NEOCITY Tech <br> Conference 2025</h1>
         <div class="hero-content">
             <p class="tagline">Exploring the Future: AI, Blockchain, and the Metaverse</p>
-            <p class="event-details"> April 20-22, 2025 | Seoul, South Korea</p>
+            <p class="event-details"> April 20, 2025 | Seoul, South Korea</p>
         </div>
-
             <div class="carousel-container">
                 <div class="carousel">
                     <img src="static/images/office.jpg" alt="Slide 1">
@@ -68,16 +67,19 @@
                     <img src="static/images/mark.png" alt="Mark Lee">
                     <h3>Mark Lee</h3>
                     <p>CEO of NEO AI Labs</p>
+                    <p class="bio">A pioneer in artificial intelligence, Mark has led groundbreaking projects in AI-driven automation and smart technology.</p>
                 </div>
                 <div class="speaker-profile">
                     <img src="static/images/sakuya.png" alt="Fujinaga Sakuya">
                     <h3>Fujinaga Sakuya</h3>
                     <p>Lead Developer at NCTverse</p>
+                    <p class="bio">With extensive experience in metaverse development, Sakuya specializes in building immersive digital experiences and AI-driven interfaces.</p>
                 </div>
                 <div class="speaker-profile">
                     <img src="static/images/xiaojun.png" alt="Xiao Dejun">
                     <h3>Xiao Dejun</h3>
                     <p>XR Experience Designer</p>
+                    <p class="bio">An expert in augmented and virtual reality, Xiao has designed interactive digital spaces that redefine user engagement in XR environments.</p>
                 </div>
             </div>
         </div>
@@ -87,8 +89,14 @@
     <section id="venue">
         <div class="container">
             <h2>Venue</h2>
-            <p>📍 **NEO Tech Hub, Seoul, South Korea**</p>
-            <p>A futuristic smart city venue powered by **AI, blockchain, and 5G technology.**</p>
+            <div class="loc">
+            <img src="static/images/venue.jpg" alt="Venue Building">
+            <h3>NEO Tech Hub, Seoul, South Korea</h3>
+            <p>Located in the heart of Seoul, NEO Tech Hub is a state-of-the-art venue designed for cutting-edge technology events.  
+                It features high-speed connectivity, immersive XR experience zones, and modern conference halls equipped with  
+                the latest AV technology. Attendees can enjoy a dynamic networking lounge, AI-powered assistance, and premium  
+                catering services, ensuring a seamless and engaging event experience.</p>
+            </div>
         </div>
     </section>
 
@@ -97,9 +105,9 @@
         <div class="container">
             <h2>Schedule</h2>
             <ul>
-                <li>🕙 **10:00 AM** – Opening Keynote: NEO Horizons</li>
-                <li>🕛 **12:00 PM** – Panel Discussion: Future of Web3 & Metaverse</li>
-                <li>🕒 **3:00 PM** – AI-Generated Music & Virtual Performance</li>
+                <li>10:00 AM – Opening Keynote: NEO Horizons</li>
+                <li>12:00 PM – Panel Discussion: Future of Web & Metaverse</li>
+                <li>3:00 PM – AI-Generated Music & Virtual Performance</li>
             </ul>
         </div>
     </section>
@@ -111,11 +119,14 @@
             <button class="register-btn">Register Now</button>
         </div>
     </section>
+    <!-- A prominent "Register Now" button or call to action (linking to a registration form, -->
 
     <!-- FOOTER -->
     <footer>
         <p>© 2025 NEOCITY Tech Conference. All rights reserved.</p>
     </footer>
+    <!--Contact information (email, phone, social media links).
+    Links to the conference's terms and conditions or privacy policy (optional)-->
 
 </body>
 
@@ -123,7 +134,11 @@
     let index = 0;
     const slides = document.querySelectorAll(".carousel img");
     const totalSlides = slides.length;
-    const slideWidth = slides[0].clientWidth + 30;
+    const carousel = document.querySelector(".carousel");
+
+    const slideWidth = slides[0].getBoundingClientRect().width + 30;
+
+    carousel.style.width = `${totalSlides * slideWidth}px`;
 
 function showSlide(n) {
     if (n >= totalSlides) {
@@ -134,7 +149,7 @@ function showSlide(n) {
         index = n;
     }
 
-    document.querySelector(".carousel").style.transform = `translateX(${-index * slideWidth}px)`;
+    carousel.style.transform = `translateX(${-index * slideWidth}px)`;
 }
 
 // Event listeners for navigation buttons
@@ -151,12 +166,10 @@ setInterval(() => {
     showSlide(index + 1);
 }, 3000); // Change slide every 3 seconds
 
-
     function toggleMenu() {
         const navLinks = document.querySelector('.nav-links');
         navLinks.classList.toggle('show');
     }
 </script>
-
 
 </html>

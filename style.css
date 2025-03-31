@@ -6,7 +6,7 @@
 
 body {
     font-family: Taviraj, sans-serif;
-    background-color: #145025;
+    background-color: #185e2c;
     color: #f8d9a0;
 }
 
@@ -27,7 +27,7 @@ header {
 }
 
 .logo img {
-    width: 700px;
+    width: 500px;
     margin-bottom: -20px;
 }
 
@@ -85,7 +85,7 @@ nav ul li a,
 .actions a {
     text-decoration: none;
     color: #fff4de;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 30px;
 }
@@ -104,7 +104,7 @@ nav ul li a:hover {
 .container {
     max-width: 1500px;
     margin: 100px;
-    margin-top: 10px;
+    margin-top: -10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -146,11 +146,11 @@ nav ul li a:hover {
 .hero h1 {
     font-family: 'Edensor Free', sans-serif;
     font-weight: 400;
-    font-size: 100px;
+    font-size: 80px;
     line-height: 100px;
     text-transform: uppercase;
     color: #ffd99f;
-    margin: 50px;
+    margin: 40px;
     margin-bottom: -70px;
 }
 
@@ -163,11 +163,15 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    text-align: center;
+}
+
 .hero-content {
     margin-top: 80px;
-    margin-bottom: -60px;
+    margin-bottom: -50px;
     color: white;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 /* SPEAKER PROFILES */
@@ -195,6 +199,18 @@ h2 {
 
 .speaker-profile img:hover {
     transform: scale(1.15);
+}
+
+/* VENUE */
+.loc img{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
 }
 
 /* REGISTRATION BUTTON */
@@ -225,25 +241,29 @@ footer {
 }
 
 /* CAROUSEL */
-
 .carousel-container {
     position: relative;
-    width: 100%;
-    max-width: 1160px; 
-    margin: 80px;
+    width: 85%;
+    max-width: 1160px;
+    margin: 80px auto;
     border-radius: 20px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .carousel {
     display: flex;
     gap: 30px;
-    padding: 50px;
     transition: transform 0.5s ease-in-out;
+    width: fit-content;
+    padding: 30px;
 }
 
 .carousel img {
-    width: 70%;
+    width: 100%;
+    max-width: 600px;
     flex-shrink: 0;
     border-radius: 20px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
@@ -269,4 +289,3 @@ footer {
 .carousel-btn:hover {
     background: rgba(0, 0, 0, 0.8);
 }
-
