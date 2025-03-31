@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* REGISTRATION FORM */
+.registration-form {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1b1f42;
+}
+
+.registration-form form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.registration-form input,
+.registration-form select {
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.registration-form button {
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background: #145025;
+    color: #f8d9a0;
+    border: none;
+    font-size: 16px;
+}
+
+.registration-form button:hover {
+    background: #f8d9a0;
+    color: #145025;
+}
+</style>
+<body>
+    <div class="registration-form">
+        <form action="submit_form.php" method="POST">
+            <h2>Register</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="attendee">Attendee</option>
+                <option value="speaker">Speaker</option>
+                <option value="volunteer">Volunteer</option>
+            </select>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

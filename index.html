@@ -113,28 +113,37 @@
         <div class="container">
             <h2>Schedule</h2>
             <ul>
-                <li>10:00 AM – Opening Keynote: NEO Horizons</li>
-                <li>12:00 PM – Panel Discussion: Future of Web & Metaverse</li>
-                <li>3:00 PM – AI-Generated Music & Virtual Performance</li>
+                <li>10:00 AM - 11:00 AM | Opening Keynote: NEO Horizons
+                    <p> Join industry leaders as they discuss the future of technology and innovation.</p></li>
+                <li>12:00 PM - 3:00 PM | Panel Discussion: Trends in AI
+                    <p> Experts share insights on the latest advancements in artificial intelligence and its impact on various sectors.</p></li>
+                <li>3:00 PM - 5:00 PM | Workshop: Building Sustainable Solutions
+                    <p>Interactive session focused on developing eco-friendly technologies and practices.</p></li>
+                <li>5:00 PM - 6:00 PM | Closing Remarks and Future Outlook
+                    <p>Wrap up the day with reflections on key takeaways and a look ahead at upcoming trends.</p></li>
             </ul>
         </div>
     </section>
 
     <!-- REGISTRATION SECTION -->
-    <section id="registration">
-        <div class="container">
-            <h2>Register Now</h2>
-            <button class="register-btn">Register Now</button>
-        </div>
-    </section>
-    <!-- A prominent "Register Now" button or call to action (linking to a registration form, -->
+<section id="registration">
+    <div class="container">
+        <h2>Register Now</h2>
+        <a href="registration_form.html" class="register-btn">Register Now</a>
+    </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2025 NEOCITY Tech Conference. All rights reserved.</p>
-    </footer>
-    <!--Contact information (email, phone, social media links).
-    Links to the conference's terms and conditions or privacy policy (optional)-->
+<!-- FOOTER -->
+<footer>
+    <p>Contact us: <a href="mailto:info@neocitytech.com">info@neocitytech.com</a> | Phone: +82 1234 5678 |
+    Follow us: 
+        <a href="#">Twitter</a> | 
+        <a href="#">Facebook</a> | 
+        <a href="#">Instagram</a>
+    </p>
+    <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+    <p>&copy; 2025 NEOCITY Tech Conference. All rights reserved.</p>
+</footer>
 
 </body>
 
@@ -178,6 +187,14 @@ setInterval(() => {
         const navLinks = document.querySelector('.nav-links');
         navLinks.classList.toggle('show');
     }
+
+// Registration Form
+function openForm() {
+    document.getElementById("registration-form").style.display = "block";
+}
+function closeForm() {
+    document.getElementById("registration-form").style.display = "none";
+}
 </script>
 
 </html>
